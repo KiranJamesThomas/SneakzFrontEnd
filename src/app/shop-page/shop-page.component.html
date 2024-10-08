@@ -1,0 +1,93 @@
+<!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
+
+<body class="bg-gray-100">
+
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0 z-50">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-l p-4">
+      <div class="flex-1 flex justify-center mr-auto">
+        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="https://flowbite.com/docs/images/logo.svg" class="h-10" alt="Flowbite Logo" /> <!-- Increased logo size -->
+          <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">Sneakz</span> <!-- Increased text size -->
+        </a>
+      </div>
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+        <a href="#" class="text-lg text-blue-600 dark:text-blue-500 hover:underline">Login</a> <!-- Increased text size -->
+      </div>
+    </div>
+
+    <div class="max-w-screen-xl px-4 py-3 mx-auto ">
+      <!-- Increased vertical padding -->
+      <div class="flex-1 flex justify-center mr-auto">
+        <ul class="flex flex-row font-medium mt-0 space-x-20 rtl:space-x-reverse text-lg">
+          <!-- Increased text size -->
+          <li>
+            <a href="#" class="text-base text-gray-900 dark:text-white hover:font-bold" aria-current="page">Brand1</a>
+          </li>
+          <li>
+            <a href="#" class="text-base text-gray-900 dark:text-white hover:font-bold">Brand2</a>
+          </li>
+          <li>
+            <a href="#" class="text-base text-gray-900 dark:text-white hover:font-bold">Brand3</a>
+          </li>
+          <li>
+            <a href="#" class="text-base text-gray-900 dark:text-white hover:font-bold">Brand4</a>
+          </li>
+          <li>
+            <a href="#" class="text-base text-gray-900 dark:text-white hover:font-bold">Brand5</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+
+  <!-- ✅ Grid Section - Starts Here 👇 -->
+  <section id="Products"
+           class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center justify-center gap-y-3 gap-x-3 mt-10 mb-5">
+
+
+    <!--   ✅ Product card 1 - Starts Here 👇 -->
+    <div *ngFor="let product of products" class="w-72 bg-gray-100 duration-500 hover:scale-105 hover:shadow-xl">
+      <a href="#">
+        <ngb-carousel>
+          <ng-template ngbSlide *ngFor="let img of product.image">
+            <div class="carousel-item">
+              <img [src]="img" alt="Product" class="d-block w-100 h-64 object-cover rounded-t-xl" />
+            </div>
+          </ng-template>
+        </ngb-carousel>
+        <div class="px-4 py-3 w-72">
+          <span class="text-gray-400 mr-3 uppercase text-xs">{{ product.brand }}</span>
+          <p class="text-lg font-bold text-black truncate block capitalize">{{ product.name }}</p>
+          <div class="flex items-center">
+            <p class="text-lg font-semibold text-black cursor-auto my-3">₹{{product.price}}</p>
+            <div class="ml-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                   fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+              </svg>
+            </div>
+            <div class="ml-5">
+              <svg width="18" height="16" viewBox="0 0 18 16">
+                <path d="M9.01163699,14.9053769 C8.72930024,14.7740736 8.41492611,14.6176996 8.07646224,14.4366167 C7.06926649,13.897753 6.06198912,13.2561336 5.12636931,12.5170512 C2.52930452,10.4655288 1.00308384,8.09476443 1.00000218,5.44184117 C0.997549066,2.99198843 2.92175104,1.01242822 5.28303025,1.01000225 C6.41066623,1.00972036 7.49184369,1.4629765 8.28270844,2.2678673 L8.99827421,2.9961237 L9.71152148,2.26559643 C10.4995294,1.45849728 11.5791258,1.0023831 12.7071151,1.00000055 L12.7060299,1.00000225 C15.0693815,0.997574983 16.9967334,2.97018759 17.0000037,5.421337 C17.0038592,8.07662382 15.4809572,10.4530151 12.8850542,12.5121483 C11.9520963,13.2521931 10.9477036,13.8951276 9.94340074,14.4354976 C9.60619585,14.6169323 9.29297309,14.7736855 9.01163699,14.9053769 Z"
+                      stroke="#2D2D2D"
+                      stroke-width="2"
+                      fill="transparent" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</body>
+

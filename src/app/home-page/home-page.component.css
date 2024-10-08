@@ -1,8 +1,17 @@
+.one {
+  margin-left: 60px;
+}
+
+.two {
+    background-color: gray-200;
+}
+
 a {
   color: inherit; /* Makes the link color inherit from the parent */
   text-decoration: none; /* Removes the underline */
 }
 
-  a:hover {
+a:hover {
     text-decoration: none; /* Ensures underline stays removed on hover */
-  }
+}
+

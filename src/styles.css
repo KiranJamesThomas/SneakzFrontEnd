@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "D:/Angular/Sneakz/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "D:/Angular/Sneakz/src/output.css";
 
 @tailwind base;
 @tailwind components;

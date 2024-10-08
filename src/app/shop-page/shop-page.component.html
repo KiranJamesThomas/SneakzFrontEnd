@@ -2,12 +2,11 @@
 
 <body class="bg-gray-100">
 
-  <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0 z-50">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-l p-4">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0 z-50 shadow">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-l p-2">
       <div class="flex-1 flex justify-center mr-auto">
-        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-10" alt="Flowbite Logo" /> <!-- Increased logo size -->
-          <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">Sneakz</span> <!-- Increased text size -->
+        <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="images/SNEAKZ.png" class="h-12" alt="Sneakz Logo" />
         </a>
       </div>
       <div class="flex items-center space-x-6 rtl:space-x-reverse">
@@ -15,7 +14,7 @@
       </div>
     </div>
 
-    <div class="max-w-screen-xl px-4 py-3 mx-auto ">
+    <div class="max-w-screen-xl px-4 mx-auto ">
       <!-- Increased vertical padding -->
       <div class="flex-1 flex justify-center mr-auto">
         <ul class="flex flex-row font-medium mt-0 space-x-20 rtl:space-x-reverse text-lg">
@@ -42,9 +41,7 @@
   <br />
   <br />
   <br />
-  <br />
-  <br />
-  <br />
+
 
 
   <!-- ✅ Grid Section - Starts Here 👇 -->
@@ -55,17 +52,16 @@
     <!--   ✅ Product card 1 - Starts Here 👇 -->
     <div *ngFor="let product of products" class="w-72 bg-gray-100 duration-500 hover:scale-105 hover:shadow-xl">
       
-      <a href="#">
+      <a [routerLink]="['/product', product.id]">
         <ngb-carousel>
           <ng-template ngbSlide *ngFor="let img of product.images">
-            <h1>{{img}}</h1>
-            <div class="carousel-item">
-              <img [src]="img" alt="Product" class="d-block w-100 h-64 object-cover rounded-t-xl" />
+            <div>
+              <img src="{{img}}" alt="Product" class="d-block w-100 h-64 object-cover rounded-t-xl" />
             </div>
           </ng-template>
         </ngb-carousel>
         <div class="px-4 py-3 w-72">
-          <span class="text-gray-400 mr-3 uppercase text-xs">{{ product.brand }}</span>
+          <span class="text-gray-400 mr-3 uppercase text-xs">{{ product.brand.brandName }}</span>
           <p class="text-lg font-bold text-black truncate block capitalize">{{ product.name }}</p>
           <div class="flex items-center">
             <p class="text-lg font-semibold text-black cursor-auto my-3">₹{{product.price}}</p>

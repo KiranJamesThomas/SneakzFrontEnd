@@ -3,11 +3,12 @@ import { Product } from '../model/Product';
 import { ProductService } from '../service/product.service';
 import { CommonModule } from '@angular/common';
 import { NgbCarousel, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shop-page',
   standalone: true,
-  imports: [CommonModule, NgbModule, NgbCarousel],
+  imports: [CommonModule, NgbModule, NgbCarousel, RouterLink],
   templateUrl: './shop-page.component.html',
   styleUrl: './shop-page.component.css'
 })

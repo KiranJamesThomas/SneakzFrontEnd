@@ -9,11 +9,11 @@ export class Product{
   size!: number;
   price!: number;
   brand!: Brand;
-  image!: string[];
+  images!: string[];
 
 
   constructor(id: number, colour: string, description: string, name: string, quantity: number,
-    size: number, price:number , brand: Brand, image:string[]) {
+    size: number, price:number , brand: Brand, images:string[]) {
     this.id = id;
     this.colour = colour;
     this.description = description;
@@ -21,7 +21,7 @@ export class Product{
     this.quantity = quantity;
     this.price = price;
     this.size = size;
-    this.image = [];
+    this.images = images;
   }
   
 

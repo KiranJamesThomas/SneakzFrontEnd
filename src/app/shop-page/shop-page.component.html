@@ -54,9 +54,11 @@
 
     <!--   ✅ Product card 1 - Starts Here 👇 -->
     <div *ngFor="let product of products" class="w-72 bg-gray-100 duration-500 hover:scale-105 hover:shadow-xl">
+      
       <a href="#">
         <ngb-carousel>
-          <ng-template ngbSlide *ngFor="let img of product.image">
+          <ng-template ngbSlide *ngFor="let img of product.images">
+            <h1>{{img}}</h1>
             <div class="carousel-item">
               <img [src]="img" alt="Product" class="d-block w-100 h-64 object-cover rounded-t-xl" />
             </div>

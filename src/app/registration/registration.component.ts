@@ -27,11 +27,11 @@ export class RegistrationComponent {
   onSubmit() {
     this.errorMessages = [];
 
-    if (this.password !== this.confirmPassword) {
+    if (this.password != this.confirmPassword) {
       this.errorMessages.push('Passwords do not match.');
     }
 
-    if (this.errorMessages.length === 0) {
+    if (this.errorMessages.length == 0) {
       this.user.password = this.password;
       this.user.uName = this.email
       this.userService.addUser(this.user).subscribe(
@@ -44,6 +44,7 @@ export class RegistrationComponent {
         }
       );
     }
+    this.goToHome();
   }
 
 }

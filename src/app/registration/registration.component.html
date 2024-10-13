@@ -9,14 +9,17 @@
         <h2 class="font-bold text-4xl text-gray-600"><i>Registration</i></h2>
         <p class="text-sm mt-4 text-gray-500">Create your account easily.</p>
 
-        <form id="registrationForm" class="flex flex-col gap-4" onsubmit="onSubmit()">
+        <form id="registrationForm" class="flex flex-col gap-4" (ngSubmit)="onSubmit()">
           <input [(ngModel)]="email" class="p-2 mt-8 rounded-xl border" type="email" name="email" placeholder="Email" required>
           <input [(ngModel)]="password" class="p-2 rounded-xl border" type="password" name="password" id="password" placeholder="Password" required>
           <input [(ngModel)]="confirmPassword" class="p-2 rounded-xl border" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
           <button type="submit" class="bg-[#e6e6fa] text-gray-700 py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium">Register</button>
         </form>
 
-        <div id="errorMessages" class="text-red-500 mt-2"></div>
+        <div *ngIf="errorMessages.length" class="text-red-500 mt-2">
+          <div *ngFor="let message of errorMessages">{{ message }}</div>
+        </div>
+
       </div>
       <div class="md:block hidden w-1/2">
         <img class="rounded-2xl max-h-[1600px]" src="assets/login.png" />

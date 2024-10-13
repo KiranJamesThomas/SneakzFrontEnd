@@ -1,0 +1,76 @@
+<nav class="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0 z-50 shadow">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-l p-2">
+    <div class="flex-1 flex justify-center mr-auto">
+      <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="images/SNEAKZ.png" class="h-20" alt="Sneakz Logo" />
+      </a>
+    </div>
+    </div>
+</nav>
+<br />
+<br />
+<br />
+<br />
+
+<div class="bg-gray-100 h-screen py-8">
+  <div class="container mx-auto px-4">
+    <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="md:w-3/4">
+        <div class="bg-gray-100 p-6 mb-4">
+          <table class="w-full">
+            <thead>
+              <tr>
+                <th class="text-left font-semibold">Product</th>
+                <th class="text-left font-semibold">Price</th>
+                <th class="text-left font-semibold">Quantity</th>
+                <th class="text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-4 ">
+                  <div class="flex items-center">
+                    <img class="h-20 w-20 mr-4" src="assets/air-jordan-4-retro-1.jpg" alt="Product image">
+                    <span class="font-semibold w-60">AIR JORDAN 1 RETRO HIGH OG 'MIDNIGHT NAVY/BLACK-WHITE-SAIL'</span>
+                  </div>
+                </td>
+                <td class="py-4 mr-1">₹16995.00</td>
+                <td class="py-4">
+                  <div class="flex items-center">
+                    <button class="border rounded-md py-1 px-2 mr-2">-</button>
+                    <span class="text-center w-8">1</span>
+                    <button class="border rounded-md py-1 px-2 ml-2">+</button>
+                  </div>
+                </td>
+                <td class="py-4">$19.99</td>
+              </tr>
+              <!-- More product rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="md:w-1/4">
+        <div class="bg-white shadow-md p-6">
+          <h2 class="text-lg font-semibold mb-4">Summary</h2>
+          <div class="flex justify-between mb-2">
+            <span>Subtotal</span>
+            <span>$19.99</span>
+          </div>
+          <br />
+          <br />
+          <div class="flex justify-between mb-2">
+            <span>Shipping</span>
+            <span>$0.00</span>
+          </div>
+          <hr class="my-2">
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold">Total</span>
+            <span class="font-semibold">$21.98</span>
+          </div>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

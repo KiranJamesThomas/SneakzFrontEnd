@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
+import { AuthService } from '../service/auth.service';
+import { User } from '../model/User';
+
 
 @Component({
   selector: 'app-login',
@@ -25,7 +28,9 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
+
+  uid?: number;
 
   onSubmit() {
     const loginData = {
@@ -33,14 +38,14 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.http.post('http://localhost:8001/Sneakz/login', loginData, { responseType: 'text' })
-      .subscribe({
-        next: (response) => {
+    this.authService.login(this.email, this.password).subscribe(
+        (user: User) => {
           // Handle successful login
-          console.log(response);
+          console.log(user);
+          localStorage.setItem('userId', user.id.toString());
           this.router.navigate(['/']); // Change to your dashboard route
         },
-        error: (error) => {
+        (error) => {
           // Handle login error
           if (error.status === 404) {
             this.errorMessage = 'User not found';
@@ -51,7 +56,7 @@ export class LoginComponent {
           }
           console.error('Login error', error);
         }
-      });
+      );
   }
 
  

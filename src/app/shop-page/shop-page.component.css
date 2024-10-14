@@ -11,3 +11,7 @@ a {
 ::ng-deep .carousel-control-next {
   display: none !important; /* Hides the navigation arrows */
 }
+
+.fill-purple {
+  fill: purple; /* Fill color when in wishlist */
+}

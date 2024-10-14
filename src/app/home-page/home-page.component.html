@@ -41,7 +41,7 @@
           <a class="text-base text-gray-900 dark:text-white hover:font-bold" href="#footer">About Us</a>
         </div>
         <div class="hidden md:block">
-          <button routerLink="/login-page" type="button" class="py-3 px-8 text-sm border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded">Login</button>
+          <button (click)="toggleLoginLogout()" routerLink="/login-page" type="button" class="py-3 px-8 text-sm border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded">{{ buttonText }}</button>
         </div>
       </div>
     </header>
